@@ -1,17 +1,6 @@
-*.log
-.DS_Store
-.env
-.env.backup
-.env.production
-.phpactor.json
-.phpunit.result.cache
-/.fleet
-/.idea
-/.nova
+# Laravel Framework
 /.phpunit.cache
-/.vscode
-/.zed
-/auth.json
+/.phpunit.result.cache
 /node_modules
 /public/build
 /public/hot
@@ -19,6 +8,29 @@
 /storage/*.key
 /storage/pail
 /vendor
+
+# IDEs and Editors
+.DS_Store
+.idea
+.vscode
+.zed
+.fleet
+.nova
+nbproject/
+*.sublime-project
+*.sublime-workspace
+
+# Environment
+.env
+.env.backup
+.env.production
+.env.testing
+auth.json
 Homestead.json
 Homestead.yaml
+
+# OS Files
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
