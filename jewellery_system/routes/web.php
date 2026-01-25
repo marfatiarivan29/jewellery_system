@@ -11,6 +11,7 @@ use App\Http\Controllers\SaleController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ReportController;
 
+// Authentication Routes
 Route::get('/', function () {
     return redirect()->route('login');
 });
@@ -21,20 +22,25 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'store']);
 
+// Protected Routes
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    // Mastr Data Management
     Route::resource('products', ProductController::class);
     Route::resource('categories', CategoryController::class);
     Route::resource('suppliers', SupplierController::class);
     Route::resource('customers', CustomerController::class);
     
+    // Sales Management
     Route::resource('sales', SaleController::class);
     Route::get('sales/{sale}/invoice', [SaleController::class, 'invoice'])->name('sales.invoice');
 
+    // System Settings
     Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
     Route::post('settings', [SettingController::class, 'update'])->name('settings.update');
 
+    // Reports
     Route::get('reports', [ReportController::class, 'index'])->name('reports.index');
     Route::get('reports/generate', [ReportController::class, 'generate'])->name('reports.generate');
 });
