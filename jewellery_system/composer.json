@@ -1,9 +1,9 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "marfatiarivan29/jewellery-system",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "A comprehensive system for managing jewellery inventory and sales.",
+    "keywords": ["laravel", "framework", "jewellery", "inventory"],
     "license": "MIT",
     "require": {
         "php": "^8.2",
